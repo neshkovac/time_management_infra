@@ -11,5 +11,11 @@ class DynamoDBStack(core.Stack):
         user_table = UserTable(self) 
         schedule_table = ScheduleTable(self)
 
-        self.tables: typing.Sequence[_ddb.Table] = [user_table,schedule_table]
-    
+        self.tables = {
+            "user-table" : user_table,
+            "schedule-table": schedule_table
+        }
+
+        
+        
+            
